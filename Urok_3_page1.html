@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ссылка на страницу 2</title>
+    <!--link -для подключения файлов, которые создали сами-->
+    <link rel="stylesheet" href="style_urok_3.css">
+    <!--link -для подключения Bootstrap css, берем ссылку с сайта-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+</head>
+<body class="my_class">
+
+<nav class="navbar navbar-expand-lg bg-light navbar-dark bg-dark">
+  <div class="container-md">
+    <a class="navbar-brand" href="#">Панель навигации</a>
+  </div>
+</nav>
+
+    <h1>Page 1</h1>
+<!--a-для ссылок-->
+    <a href="Urok_3_page2.html">link 2</a>
+ <form>
+    <!-- form-элемент для заполнения и дальнейшей отправки-->
+    <!--vue.js react -это фреймворки-->
+    <!--input-это поле для ввода-->
+     <!--Label-это тег для подписи поля или кнопки-->
+     <!--for id - для связи между label и input-->
+ <p>
+     <label for="f1">Простое поле</label>
+    <input type="text" id="f1" class="form-control-lg">
+ </p>
+     <label for="f2">Вводим пароль</label>
+    <input type="password" id="f2" class="form-control-sm">
+
+      <div class="col-auto">
+    <span id="passwordHelpInline" class="form-text">
+        Должно быть 8-20 символов.
+    </span>
+      </div>
+<p>
+    <div class="form-check form-switch">
+     <label for="f3">Чек-бокс</label>
+    <input type="checkbox" id="f3" class="form-check-input" role="switch" checked>
+ </div>
+ </p>
+<p>
+     <label for="f4">Введите дату и время</label>
+    <input type="datetime-local" id="f4">
+</p>
+
+
+  <p><b>Введите ваш отзыв:</b></p>
+  <p><textarea name="comment" cols="60" rows="3" maxlength="120"></textarea></p>
+  <p><input type="submit"></p>
+    <!--создадим кнопки-->
+<!--это просто кнопка-->
+    <input type="button" value="send-1">
+ <!--это кнопка для отправки этой формы-->
+    <input type="submit" value="send-2">
+</form>
+<!--использую классы bootstrap и так же свои-->
+<!--разные классы прописываю через пробел-->
+<!--<button class="btn btn-primary my_class_text">Привет</button>-->
+<!--<button type="button" class="btn btn-primary">Primary</button>-->
+<!--<button type="button" class="btn btn-secondary">Secondary</button>-->
+<!--<button type="button" class="btn btn-success">Success</button>-->
+<!--<button type="button" class="btn btn-danger">Danger</button>-->
+<!--<button type="button" class="btn btn-warning">Warning</button>-->
+<!--<button type="button" class="btn btn-info">Info</button>-->
+<!--<button type="button" class="btn btn-light">Light</button>-->
+<!--<button type="button" class="btn btn-dark">Dark</button>-->
+
+<!--<button type="button" class="btn btn-link">Link</button>-->
+</body>
+</html>

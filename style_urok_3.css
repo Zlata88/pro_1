@@ -1,0 +1,17 @@
+/*для тега*/
+h1
+{font-family:'Gill Sans','Gill Sans MT', Calibri;
+    text-align: center;
+}
+/*для класса*/
+.my_class
+{background:yellow;
+}
+
+/*курсив с наклоном*/
+.my_class_text
+{font-style:  italic;
+}
+
+.navbar navbar-dark bg-dark{
+}
