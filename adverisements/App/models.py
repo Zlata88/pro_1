@@ -1,4 +1,7 @@
 from django.db import models
+from django.contrib import admin
+from django.utils import timezone
+from django.utils.html import format_html
 
 
 # Create your models here.
@@ -36,9 +39,23 @@ class Adverisements(models.Model):
         verbose_name='Дата обновлния'
     )
 
+    @admin.display(description='дата создания')
+    def created_date(self):
+
+        if self.created_at.date() == timezone.now().date():
+            created_time = self.created_at.time().strftime("%H:%M:%S")
+            return format_html('<span style="color":green; font-weight:bold;">Сегодня в {} </span>', created_time)
+        return self.created_at.strftime("%d.%m.%y в %H:%M:%S")
+
+    @admin.display(description='дата обновления')
+    def updated_date(self):
+        if self.updated_at.date() == timezone.now().date():
+            updated_time = self.created_at.time().strftime("%H:%M:%S")
+            return format_html('<span style="color":yellow> Сегодня в {} </span>', updated_time)
+        return self.updated_at.strftime("%d.%m.%y в %H:%M:%S")
+
     def __str__(self):
-        return f"Adverisements: Adverisements(id={self.id}, title={self.title}, price={self.price})"
+        return f"Adverisements(id={self.id}, title={self.title}, price={self.price})"
 
-
-class Meta:
-    db_table = 'advertisements'
+    class Meta:
+        db_table = 'advertisements'

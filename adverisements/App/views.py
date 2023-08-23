@@ -2,15 +2,15 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
+from django.shortcuts import render
+from .models import Adverisements
+
 
 def index(request):
-    n = ['Oleg', 'Olga', 'Ivan', 'Ron']
-    return render(request, 'new.html', context={'names': n})
+    advertisements = Adverisements.objects.all()
+    context = {'advertisements': advertisements}
+    return render(request, 'index.html', context)
 
 
-def new(request):
-    return render(request, 'new.html', context=None)
-
-
-def base(request):
-    return render(request, 'base.html', context=None)
+def top_sellers(request):
+    return render(request, 'top-sellers.html')
