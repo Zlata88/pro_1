@@ -6,6 +6,7 @@ from django.shortcuts import render
 from .models import Adverisements
 
 
+# Прописываем, что можно вернуть на какой-либо запрос
 def index(request):
     advertisements = Adverisements.objects.all()
     context = {'advertisements': advertisements}

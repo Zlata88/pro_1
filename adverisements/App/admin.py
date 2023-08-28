@@ -4,16 +4,18 @@ from .models import Adverisements
 
 # Register your models here.
 class AdverisementsAdmin(admin.ModelAdmin):
-    list_display = ['id', 'title', 'description', 'price', 'created_date', 'updated_date', 'auction']
+    list_display = ['id', 'title', 'description', 'price', 'created_date', 'updated_date', 'auction', 'user', 'image',
+                    'get_html_image']
     list_filter = ('title', 'price', 'created_at')
     actions = ['make_auctions_as_false', 'make_auctions_as_true']  # добавили новое действие в меню
     fieldsets = (
         ('Общее', {
-            'fields': ('title', 'description')
+            'fields': ('title', 'description', 'user', 'image')
         }),
         ('Финансы', {
             'fields': ('price', 'auction')
         })
+
     )  # красиво размещаем смысловые блоки
 
     @admin.action(
